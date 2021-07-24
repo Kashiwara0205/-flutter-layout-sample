@@ -3,19 +3,22 @@ import 'center_sample.dart';
 import 'grid_view_sample.dart';
 import 'align_sample.dart';
 import 'aspcet_sample.dart';
+import 'container_sample.dart';
 
 enum Page {
   centerSample,
   gridViewSample,
   alignSample,
-  aspectSample
+  aspectSample,
+  containerSample
 }
 
 final List<Widget> pageList = [
   createCenterSample(),
   createGridViewSample(),
   createAlignSample(),
-  createAspectSample()
+  createAspectSample(),
+  createContainerSample()
 ];
 
 class SideMenu extends StatefulWidget {
@@ -66,13 +69,6 @@ class _State extends State<SideMenu> {
                 },
               ),
               ListTile(
-                title: const Text('Baseline'),
-                onTap: () {
-                  setState(() => page = 0);
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
                 title: const Text('Center'),
                 onTap: () {
                   setState(() => page = Page.centerSample.index);
@@ -80,16 +76,9 @@ class _State extends State<SideMenu> {
                 },
               ),
               ListTile(
-                title: const Text('ConstrainedBox'),
-                onTap: () {
-                  setState(() => page = 0);
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
                 title: const Text('Container'),
                 onTap: () {
-                  setState(() => page = 0);
+                  setState(() => page = Page.containerSample.index);
                   Navigator.pop(context);
                 },
               ),
