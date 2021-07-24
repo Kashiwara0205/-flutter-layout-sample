@@ -6,6 +6,7 @@ import 'aspcet_sample.dart';
 import 'container_sample.dart';
 import 'padding_sample.dart';
 import 'sized_box_sample.dart';
+import 'trans_form_sample.dart';
 
 enum Page {
   centerSample,
@@ -14,7 +15,8 @@ enum Page {
   aspectSample,
   containerSample,
   paddingSample,
-  sizedBoxSample
+  sizedBoxSample,
+  transFormSample
 }
 
 final List<Widget> pageList = [
@@ -24,7 +26,8 @@ final List<Widget> pageList = [
   createAspectSample(),
   createContainerSample(),
   createPaddingSample(),
-  createSizeBoxDemoSample()
+  createSizeBoxDemoSample(),
+  createTransFormSample()
 ];
 
 class SideMenu extends StatefulWidget {
@@ -108,7 +111,7 @@ class _State extends State<SideMenu> {
               ListTile(
                 title: const Text('Transform'),
                 onTap: () {
-                  setState(() => page = 0);
+                  setState(() => page = Page.transFormSample.index);
                   Navigator.pop(context);
                 },
               ),
