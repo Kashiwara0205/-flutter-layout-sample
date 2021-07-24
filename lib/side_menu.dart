@@ -4,13 +4,15 @@ import 'grid_view_sample.dart';
 import 'align_sample.dart';
 import 'aspcet_sample.dart';
 import 'container_sample.dart';
+import 'padding_sample.dart';
 
 enum Page {
   centerSample,
   gridViewSample,
   alignSample,
   aspectSample,
-  containerSample
+  containerSample,
+  paddingSample
 }
 
 final List<Widget> pageList = [
@@ -18,7 +20,8 @@ final List<Widget> pageList = [
   createGridViewSample(),
   createAlignSample(),
   createAspectSample(),
-  createContainerSample()
+  createContainerSample(),
+  createPaddingSample()
 ];
 
 class SideMenu extends StatefulWidget {
@@ -86,7 +89,7 @@ class _State extends State<SideMenu> {
               ListTile(
                 title: const Text('Padding'),
                 onTap: () {
-                  setState(() => page = 0);
+                  setState(() => page = Page.paddingSample.index);
                   Navigator.pop(context);
                 },
               ),
