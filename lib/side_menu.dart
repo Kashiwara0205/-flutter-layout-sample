@@ -2,17 +2,20 @@ import 'package:flutter/material.dart';
 import 'center_sample.dart';
 import 'grid_view_sample.dart';
 import 'align_sample.dart';
+import 'aspcet_sample.dart';
 
 enum Page {
   centerSample,
   gridViewSample,
-  alignSample
+  alignSample,
+  aspectSample
 }
 
 final List<Widget> pageList = [
   createCenterSample(),
   createGridViewSample(),
-  createAlignSample()
+  createAlignSample(),
+  createAspectSample()
 ];
 
 class SideMenu extends StatefulWidget {
@@ -25,7 +28,7 @@ class SideMenu extends StatefulWidget {
 }
 
 class _State extends State<SideMenu> {
-  var  page = Page.centerSample.index;
+  var  page = Page.alignSample.index;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +61,7 @@ class _State extends State<SideMenu> {
               ListTile(
                 title: const Text('AspectRatio'),
                 onTap: () {
-                  setState(() => page = 0);
+                  setState(() => page = Page.aspectSample.index);
                   Navigator.pop(context);
                 },
               ),
