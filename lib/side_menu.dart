@@ -8,6 +8,7 @@ import 'padding_sample.dart';
 import 'sized_box_sample.dart';
 import 'trans_form_sample.dart';
 import 'column_sample.dart';
+import 'list_view_sample.dart';
 
 enum Page {
   centerSample,
@@ -18,7 +19,8 @@ enum Page {
   paddingSample,
   sizedBoxSample,
   transFormSample,
-  columnSample
+  columnSample,
+  listViewSample
 }
 
 final List<Widget> pageList = [
@@ -30,7 +32,8 @@ final List<Widget> pageList = [
   createPaddingSample(),
   createSizeBoxDemoSample(),
   createTransFormSample(),
-  createColumnSample()
+  createColumnSample(),
+  createListViewSample()
 ];
 
 class SideMenu extends StatefulWidget {
@@ -135,7 +138,7 @@ class _State extends State<SideMenu> {
               ListTile(
                 title: const Text('ListView'),
                 onTap: () {
-                  setState(() => page = 0);
+                  setState(() => page = Page.listViewSample.index);
                   Navigator.pop(context);
                 },
               ),
