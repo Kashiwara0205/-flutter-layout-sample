@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
 
-class GridViewPage extends StatefulWidget {
-  const GridViewPage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<GridViewPage> createState() => GridViewSample();
-}
-
 class LayoutNameContainerFactory{
   static Container create(String name){
     return Container(
@@ -27,11 +18,8 @@ class LayoutNameContainerFactory{
   }
 }
 
-class GridViewSample extends State<GridViewPage>  {
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.count(
+Widget createGridViewSample(){
+  return GridView.count(
     primary: false,
     padding: const EdgeInsets.all(20),
     crossAxisSpacing: 5,
@@ -48,5 +36,5 @@ class GridViewSample extends State<GridViewPage>  {
       LayoutNameContainerFactory.create("H"),
     ],
   );
-  }
 }
+    

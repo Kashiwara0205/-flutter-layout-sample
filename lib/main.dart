@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "./grid_view_sample.dart";
+import "./side_menu.dart";
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const GridViewPage(title: 'grid view'),
+      home: const SideMenu(),
     );
   }
 }
