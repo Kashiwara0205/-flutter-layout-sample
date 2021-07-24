@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'center_sample.dart';
 import 'grid_view_sample.dart';
+import 'align_sample.dart';
 
 enum Page {
   centerSample,
   gridViewSample,
+  alignSample
 }
 
 final List<Widget> pageList = [
   createCenterSample(),
-  createGridViewSample()
+  createGridViewSample(),
+  createAlignSample()
 ];
 
 class SideMenu extends StatefulWidget {
@@ -22,7 +25,7 @@ class SideMenu extends StatefulWidget {
 }
 
 class _State extends State<SideMenu> {
-  var  page = 0;
+  var  page = Page.centerSample.index;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +51,7 @@ class _State extends State<SideMenu> {
               ListTile(
                 title: const Text('Align'),
                 onTap: () {
-                  setState(() => page = 0);
+                  setState(() => page = Page.alignSample.index);
                   Navigator.pop(context);
                 },
               ),
